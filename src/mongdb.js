@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
-const getDatabase = async (callback) => {
+const getDatabase = async () => {
   try {
     const client = await MongoClient.connect(
       process.env.MONGODB_CONNECTION_URL,
@@ -10,12 +10,12 @@ const getDatabase = async (callback) => {
         useUnifiedTopology: true,
       }
     );
-    if (callback) {
-      callback(client.db(process.env.DATABASE_NAME));
-    }
+    return client.db(process.env.DATABASE_NAME);
   } catch (error) {
     console.error(error);
   }
 };
 
-module.exports = getDatabase;
+module.exports = {
+  getDatabase,
+};
