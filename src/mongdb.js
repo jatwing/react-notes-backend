@@ -16,6 +16,4 @@ const getDatabase = async () => {
   }
 };
 
-module.exports = {
-  getDatabase,
-};
+module.exports = getDatabase;
