@@ -1,12 +1,13 @@
 org: jatwing
-app: hello
-service: hello
+app: react-notes
+service: react-notes
 
 provider:
   name: aws
   runtime: nodejs14.x
   stage: production
   region: ap-northeast-1
+  lambdaHashingVersion: 20201221
 
 functions:
   app:
