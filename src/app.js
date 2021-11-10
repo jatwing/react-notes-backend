@@ -14,11 +14,10 @@ app.get('/test', (req, res) => {
 app.get('/author', async (req, res) => {
   const database = await getDatabase();
   const author = await database
-    .collection('author')
+    .collection('authors')
     .findOne({
       name: 'jatwing',
     })
-    .toArray();
   res.send(author);
 });
 
