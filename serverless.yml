@@ -14,5 +14,8 @@ functions:
     handler: src/index.handler
     events:
       - http:
+          path: /
+          method: get
+      - http:
           path: /{proxy+}
           method: get
