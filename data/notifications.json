@@ -4,6 +4,7 @@
       "$oid": "618b4859e20f960661ec2341"
     },
     "content": "Naturam Primum Cognoscere Rerum.",
-    "id": "motto"
+    "id": "motto",
+    "isActive": true
   }
 ]
