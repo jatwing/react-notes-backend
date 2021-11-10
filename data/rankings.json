@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "618b4a61e20f960661ec2352"
+  },
+  "name": "/",
+  "ranking": {
+    "/advanced-guide": 3,
+    "/beginner-tutorial": 6,
+    "/hooks": 4,
+    "/main-concepts": 2,
+    "/redux-essentials": 5,
+    "/tutorial-intro-to-react": 1
+  }
+},{
+  "_id": {
+    "$oid": "618b5ba5e20f960661ec2355"
+  },
+  "name": "/advanced-guides",
+  "ranking": {
+    "/advanced-guides/accessibility": 3,
+    "/advanced-guides/code-splitting": 2,
+    "/advanced-guides/context": 1
+  }
+},{
+  "_id": {
+    "$oid": "618b5c1be20f960661ec2356"
+  },
+  "name": "/hooks",
+  "ranking": {
+    "/hooks/building-your-own-hooks": 6,
+    "/hooks/introducing-hooks": 1,
+    "/hooks/rules-of-hooks": 5,
+    "/hooks/using-the-effect-hook": 4,
+    "/hooks/using-the-state-hook": 3
+  }
+},{
+  "_id": {
+    "$oid": "618b5d2ee20f960661ec2357"
+  },
+  "name": "/main-concepts",
+  "ranking": {
+    "/main-concepts/lists-and-keys": 8,
+    "/main-concepts/introducing-jsx": 2,
+    "/main-concepts/lifting-state-up": 10,
+    "/main-concepts/thinking-in-react": 12,
+    "/main-concepts/composition-vs-inheritance": 11,
+    "/main-concepts/hello-world": 1,
+    "/main-concepts/handling-events": 6,
+    "/main-concepts/forms": 9,
+    "/main-concepts/state-and-lifecycle": 5,
+    "/main-concepts/components-and-props": 4,
+    "/main-concepts/rendering-elements": 3,
+    "/main-concepts/conditional-rendering": 7
+  }
+},{
+  "_id": {
+    "$oid": "618b5d84e20f960661ec2358"
+  },
+  "name": "/redux-essentials",
+  "ranking": {
+    "/redux-essentials/async-logic-and-data-fetching": 5,
+    "/redux-essentials/normalizing-data": 7,
+    "/redux-essentials/performance": 6,
+    "/redux-essentials/redux-overview-and-concepts": 1,
+    "/redux-essentials/redux-app-structure": 2,
+    "/redux-essentials/using-redux-data": 4,
+    "/redux-essentials/basic-redux-data-flow": 3
+  }
+}]
