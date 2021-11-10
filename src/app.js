@@ -11,10 +11,15 @@ app.get('/test', (req, res) => {
   res.send('test');
 });
 
-app.get('/test2', async (req, res) => {
+app.get('/author', async (req, res) => {
   const database = await getDatabase();
-  const test2 = await database.collection('author').find().toArray();
-  res.send(test2);
+  const author = await database
+    .collection('author')
+    .findOne({
+      name: 'jatwing',
+    })
+    .toArray();
+  res.send(author);
 });
 
 module.exports = app;
