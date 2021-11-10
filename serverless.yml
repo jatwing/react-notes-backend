@@ -13,7 +13,6 @@ functions:
   app:
     handler: src/index.handler
     events:
-      - http: 
+      - http:
           path: /{proxy+}
           method: get
-        
