@@ -1,16 +1,19 @@
-[{
-  "_id": {
-    "$oid": "618b4896e20f960661ec2348"
-  },
-  "_copyright": {
-    "en-US": "© 2021, jatwing. All rights reserved.",
-    "zh-TW": "© 2021, jatwing. 保留一切權利。"
-  },
-  "_name": {
-    "en-US": "React Notes",
-    "zh-TW": "React 筆記"
-  },
-  "attribution": "<p><a href=\"https://reactjs.org/tutorial/tutorial.html\">Tutorial: Intro to React</a> by <a href=\"https://github.com/reactjs\">React Community</a> is licensed under a <a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>.</p>",
-  "github": "https://github.com/jatwing/react-notes-web",
-  "license": "https://creativecommons.org/licenses/by/4.0/"
-}]
+[
+  {
+    "_copyright": {
+      "en-US": "© 2021, jatwing. All rights reserved.",
+      "zh-TW": "© 2021, jatwing. 保留一切權利。"
+    },
+    "_id": {
+      "$oid": "618b4896e20f960661ec2348"
+    },
+    "_name": {
+      "en-US": "React Notes",
+      "zh-TW": "React 筆記"
+    },
+    "attribution": "<p><a href=\"https://reactjs.org/tutorial/tutorial.html\">Tutorial: Intro to React</a> by <a href=\"https://github.com/reactjs\">React Community</a> is licensed under a <a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>.</p>",
+    "github": "https://github.com/jatwing/react-notes-web",
+    "id": "react-notes",
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+]
