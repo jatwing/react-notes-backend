@@ -1,5 +1,4 @@
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
 
 const getDatabase = async () => {
   try {
@@ -12,7 +11,8 @@ const getDatabase = async () => {
     );
     return client.db(process.env.DATABASE_NAME);
   } catch (error) {
-    console.error(error);
+    console.log(error);
+    return error;
   }
 };
 
