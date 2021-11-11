@@ -47,9 +47,12 @@ app.get('/project', async (req, res) => {
     res.status(500).send(database.toString());
     return;
   }
-  const project = await database.collection('authors').findOne({
-    id: 'react-note',
+  console.log('#')
+  const project = await database.collection('projects').findOne({
+    id: 'react-notes',
   });
+  console.log('#')
+  console.log(project)
   res.send(project);
 });
 
