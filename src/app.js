@@ -1,8 +1,22 @@
 require('dotenv').config();
 const express = require('express');
+//const cors = require('cors');
 const getDatabase = require('./mongdb');
 
 const app = express();
+
+/*
+app.use(
+  cors({
+    origin: '*',
+    methods: 'GET',
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header'],
+    exposedHeaders: 'Content-Type',
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
+*/
 
 if (require.main === module) {
   app.listen(process.env.PORT, () => {
@@ -11,6 +25,13 @@ if (require.main === module) {
 }
 
 app.get('/', (req, res) => {
+  // set header
+
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
+  });
+
   res.send('Hello World!');
 });
 
@@ -22,6 +43,10 @@ app.get('/author', async (req, res) => {
   }
   const author = await database.collection('authors').findOne({
     id: 'jatwing',
+  });
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
   });
   res.send(author);
 });
@@ -47,12 +72,12 @@ app.get('/project', async (req, res) => {
     res.status(500).send(database.toString());
     return;
   }
-  console.log('#')
+  console.log('#');
   const project = await database.collection('projects').findOne({
     id: 'react-notes',
   });
-  console.log('#')
-  console.log(project)
+  console.log('#');
+  console.log(project);
   res.send(project);
 });
 

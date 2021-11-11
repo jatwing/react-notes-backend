@@ -16,8 +16,8 @@ functions:
       - http:
           path: /
           method: get
+          cors: true
       - http:
           path: /{proxy+}
           method: get
-          cors:
-            origin: '*'
+          cors: true
