@@ -16,6 +16,7 @@
     "start": "nodemon src/app.js",
     "debug": "serverless deploy --stage staging",
     "deploy": "serverless deploy --stage production",
+    "inform": "serverless info --stage staging && serverless info --stage production",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint . --fix"
   },
@@ -23,6 +24,7 @@
     "eslint": "^8.2.0",
     "eslint-plugin-node": "^11.1.0",
     "nodemon": "^2.0.15",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "serverless": "^2.66.1"
   }
 }
