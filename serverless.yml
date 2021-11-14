@@ -21,3 +21,5 @@ functions:
           path: /{proxy+}
           method: get
           cors: true
+    environment:
+      STAGE: ${sls:stage}

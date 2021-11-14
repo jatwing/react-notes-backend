@@ -1,22 +1,18 @@
 require('dotenv').config();
 const express = require('express');
-//const cors = require('cors');
+const cors = require('cors');
 const getDatabase = require('./mongdb');
 
 const app = express();
 
-/*
 app.use(
   cors({
-    origin: '*',
-    methods: 'GET',
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header'],
-    exposedHeaders: 'Content-Type',
-    credentials: true,
+    origin: process.env.STAGE === 'production' ? process.env.WEB_ORIGIN : '*',
+    methods: process.env.ALLOWED_METHODS,
+    credentials: process.env.STAGE === 'production',
     optionsSuccessStatus: 200,
-  })
+  }),
 );
-*/
 
 if (require.main === module) {
   app.listen(process.env.PORT, () => {
@@ -25,13 +21,6 @@ if (require.main === module) {
 }
 
 app.get('/', (req, res) => {
-  // set header
-
-  res.set({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': true,
-  });
-
   res.send('Hello World!');
 });
 
@@ -44,14 +33,10 @@ app.get('/author', async (req, res) => {
   const author = await database.collection('authors').findOne({
     id: 'jatwing',
   });
-  res.set({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': true,
-  });
   res.send(author);
 });
 
-app.get('/notifications', async (req, res) => {
+app.get('/notifications', cors(), async (req, res) => {
   const database = await getDatabase();
   if (database instanceof Error) {
     res.status(500).send(database.toString());
@@ -72,12 +57,9 @@ app.get('/project', async (req, res) => {
     res.status(500).send(database.toString());
     return;
   }
-  console.log('#');
   const project = await database.collection('projects').findOne({
     id: 'react-notes',
   });
-  console.log('#');
-  console.log(project);
   res.send(project);
 });
 
