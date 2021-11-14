@@ -2,13 +2,13 @@
 
 ## environment variables
 
-'''
+```
 ALLOWED_METHODS=GET,HEAD,POST,OPTIONS
 DATABASE_NAME=react-notes
 MONGODB_URL=***
 PORT=4386
 WEB_ORIGIN=https://react-notes.jatwing.com
-'''
+```
 
 
 
@@ -17,8 +17,8 @@ WEB_ORIGIN=https://react-notes.jatwing.com
 to sort the keys of json, for adding translation, use "jq"
 in vim command mode
 
-'''
+```
 :%!jq -S
-'''
+```
 
 
