@@ -5,9 +5,11 @@ const getDatabase = require('./mongdb');
 
 const app = express();
 
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+
 app.use(
   cors({
-    origin: process.env.STAGE === 'production' ? process.env.WEB_ORIGIN : '*',
+    origin: process.env.STAGE === 'production' ? allowedOrigins : '*',
     methods: process.env.ALLOWED_METHODS,
     credentials: process.env.STAGE === 'production',
     optionsSuccessStatus: 200,
@@ -36,7 +38,7 @@ app.get('/author', async (req, res) => {
   res.send(author);
 });
 
-app.get('/notifications', cors(), async (req, res) => {
+app.get('/notifications', async (req, res) => {
   const database = await getDatabase();
   if (database instanceof Error) {
     res.status(500).send(database.toString());
