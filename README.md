@@ -3,13 +3,12 @@
 ## environment variables
 
 ```
-ALLOWED_METHODS=GET,HEAD,POST,OPTIONS
-DATABASE_NAME=react-notes
-MONGODB_URL=***
-PORT=4386
-WEB_ORIGIN=https://react-notes.jatwing.com
+ALLOWED_METHODS="GET,HEAD,POST,OPTIONS"
+ALLOWED_ORIGINS="https://react-notes.pages.dev,https://react-notes.jatwing.com"
+DATABASE_NAME="react-notes"
+MONGODB_URL="***"
+PORT="4386"
 ```
-
 
 
 ## use jq to format the data
