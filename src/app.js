@@ -5,11 +5,12 @@ const getDatabase = require('./mongdb');
 
 const app = express();
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
-
 app.use(
   cors({
-    origin: process.env.STAGE === 'production' ? allowedOrigins : '*',
+    origin:
+      process.env.STAGE === 'production'
+        ? process.env.ALLOWED_ORIGINS.split(',')
+        : '*',
     methods: process.env.ALLOWED_METHODS,
     credentials: process.env.STAGE === 'production',
     optionsSuccessStatus: 200,
