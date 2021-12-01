@@ -72,8 +72,8 @@ app.get('/project', async (req, res) => {
   res.send(project);
 });
 
-app.get('/rankings/:type', async (req, res) => {
-  if (!['pages'].includes(req.params.type)) {
+app.get('/rankings/:category', async (req, res) => {
+  if (!['pages'].includes(req.params.category)) {
     res.status(500).send('unreachable');
   }
   const database = await getDatabase();
@@ -84,7 +84,7 @@ app.get('/rankings/:type', async (req, res) => {
   const rankings = await database
     .collection('rankings')
     .find({
-      type: req.params.type,
+      category: req.params.category,
     })
     .toArray();
   res.send(rankings);
