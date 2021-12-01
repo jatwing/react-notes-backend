@@ -27,6 +27,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+/**
+ * instead, return the connection,
+ *
+ * finally close it.
+ *
+ */
 app.get('/author', async (req, res) => {
   const database = await getDatabase();
   if (database instanceof Error) {
@@ -66,13 +72,21 @@ app.get('/project', async (req, res) => {
   res.send(project);
 });
 
-app.get('/rankings', async (req, res) => {
+app.get('/rankings/:type', async (req, res) => {
+  if (!['pages'].includes(req.params.type)) {
+    res.status(500).send('unreachable');
+  }
   const database = await getDatabase();
   if (database instanceof Error) {
     res.status(500).send(database.toString());
     return;
   }
-  const rankings = await database.collection('rankings').find().toArray();
+  const rankings = await database
+    .collection('rankings')
+    .find({
+      type: req.params.type,
+    })
+    .toArray();
   res.send(rankings);
 });
 
